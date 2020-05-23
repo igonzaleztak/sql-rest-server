@@ -104,7 +104,7 @@ appHTTPS.get('/:database/:table/:id', function (req, res)
   conn.query(query, function(err, result)
   {
     if (err) res.status(404).json({message: "Resource not found"});
-    res.status(200).json(result);
+    res.status(200).json(result[0]);
     res.end();
   });
 });
